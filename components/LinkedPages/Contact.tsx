@@ -20,10 +20,13 @@ export const ContactPage = () => (
           className="h-20 flex items-center w-full border-b-2 focus:pl-2 pt-2 outline-sky-500"
           placeholder="Message"
         />
-        <button className="place-self-end mt-2 py-2 px-5  bg-sky-700 hover:bg-sky-700/90 text-white font-medium" type="submit">
+        <button
+          className="place-self-end mt-2 py-2 px-5  bg-sky-700 hover:bg-sky-700/90 text-white font-medium"
+          type="submit"
+        >
           Send
         </button>
       </form>
     </section>
   </main>
-)
+);
