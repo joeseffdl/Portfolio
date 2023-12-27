@@ -40,6 +40,13 @@
   grid-template-columns: inherit;
 }
 
+.content-grid > .full-width > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width > .full-width {
+  grid-column: full-width;
+}
 *,
 *::before,
 *::after {

@@ -1,9 +1,10 @@
-import { LandingSection } from "@/components";
+import { LandingSection, ProjectsSection } from "@/components";
 
 export default function Home() {
   return (
     <>
       <LandingSection />
+      <ProjectsSection />
     </>
   )
 }

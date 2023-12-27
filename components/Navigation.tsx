@@ -7,11 +7,11 @@ export const NavigationComponent = () => {
   const pathname = usePathname()
 
   return (
-    <nav className="breakout flex items-center justify-between h-20">
-      <a href="/" className="font-bold text-2xl">
+    <nav className="breakout flex items-center justify-between h-24">
+      <a href="/" className="font-bold text-2xl text-sky-700">
         Joseph De Leon
       </a>
-      <ul className="flex gap-10">
+      <ul className="hidden md:flex gap-10">
         {NavigationList.map((list) => (
           <li key={list.name} className="relative">
             <a
