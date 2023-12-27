@@ -15,11 +15,11 @@ export const ProjectsSection = () => {
               className="relative overflow-clip flex flex-col items-center justify-center border w-full h-[400px] rounded-md shadow-xl hover:-translate-y-1 duration-150 ease-in-out"
             >
               <img
-                className="relative w-full h-full object-cover rounded-t-md"
-                src="https://unsplash.it/600/600"
-                alt={project.name}
+                className="relative w-full h-full object-cover object-left-top rounded-t-md hover:scale-105 duration-150 ease-in-out"
+                src={project.image}
+                alt={`${project.name} website image`}
               />
-              <div className="absolute bottom-0 left-0 w-full flex justify-end mt-3 border-t-2 bg-transparent ">
+              <div className="absolute bottom-0 left-0 w-full flex justify-end mt-3 bg-slate-700 bg-opacity-75">
                 {project.categories.map((category, index) => (
                   <label
                     key={category.name}
