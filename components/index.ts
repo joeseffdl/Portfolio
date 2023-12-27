@@ -3,4 +3,9 @@ import { NavigationComponent } from "./Navigation";
 import { ProjectsSection } from "./ProjectsSection";
 import { FooterComponent } from "./FooterComponent";
 
-export { NavigationComponent, LandingSection, ProjectsSection, FooterComponent }
+export {
+  NavigationComponent,
+  LandingSection,
+  ProjectsSection,
+  FooterComponent,
+};

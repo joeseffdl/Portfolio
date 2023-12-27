@@ -18,8 +18,8 @@ export const AboutPage = () => (
     <section className="flex flex-col gap-5 min-h-[500px] py-20 lg:px-32">
       <h1 className="text-center">Who is Zeph?</h1>
       <p className="text-lg font-medium">
-        A{" "}
-        <span className="text-sky-700">Computer Engineering</span> graduate from{" "}
+        A <span className="text-sky-700">Computer Engineering</span> graduate
+        from{" "}
         <span className="text-sky-700">
           Polytechnic University of the Philippines
         </span>
@@ -42,4 +42,4 @@ export const AboutPage = () => (
       </p>
     </section>
   </main>
-)
+);

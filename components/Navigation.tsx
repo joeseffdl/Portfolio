@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { NavigationList } from "@/constants"
-import { usePathname } from "next/navigation"
+import { NavigationList } from "@/constants";
+import { usePathname } from "next/navigation";
 
 export const NavigationComponent = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <nav className="breakout flex items-center justify-between h-24">
@@ -30,5 +30,5 @@ export const NavigationComponent = () => {
         ))}
       </ul>
     </nav>
-  )
-}
+  );
+};

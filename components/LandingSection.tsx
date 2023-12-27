@@ -9,4 +9,4 @@ export const LandingSection = () => (
       Computer Engineer from Polytechnic University of the Philippines.
     </p>
   </main>
-)
+);

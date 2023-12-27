@@ -1,11 +1,18 @@
-import { AboutPage, ContactPage } from "@/components/LinkedPages"
+import { AboutPage, ContactPage } from "@/components/LinkedPages";
+import { notFound } from "next/navigation";
 
-type LinkedPages = "about" | "projects" | "contact" 
+type LinkedPages = "about" | "projects" | "contact";
 
 export default function LinkedPages({
-    params: { LinkedPages },
-}: { params: { LinkedPages: LinkedPages } }) {
-    return LinkedPages === "about" ? <AboutPage /> :
-            LinkedPages === "contact" ? <ContactPage /> :
-                    null
-} 
+  params: { linkedPages },
+}: {
+  params: { linkedPages: LinkedPages };
+}) {
+  return linkedPages === "about" ? (
+    <AboutPage />
+  ) : linkedPages === "contact" ? (
+    <ContactPage />
+  ) : (
+    notFound()
+  );
+}

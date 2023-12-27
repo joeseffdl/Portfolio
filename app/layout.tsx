@@ -1,7 +1,7 @@
-import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
-import "./globals.css"
-import { NavigationComponent, FooterComponent } from "@/components"
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+import { NavigationComponent, FooterComponent } from "@/components";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -15,17 +15,17 @@ const montserrat = Montserrat({
     "Segoe UI Symbol",
     "Noto Color Emoji",
   ],
-})
+});
 
 export const metadata: Metadata = {
   title: "Joseph De Leon | Web Developer",
   description: "Web developer based in the Philippines.",
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -35,5 +35,5 @@ export default function RootLayout({
         <FooterComponent />
       </body>
     </html>
-  )
+  );
 }
