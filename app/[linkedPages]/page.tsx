@@ -8,4 +8,4 @@ export default function LinkedPages({
     return LinkedPages === "about" ? <AboutPage /> :
             LinkedPages === "contact" ? <ContactPage /> :
                     null
-}
+} 
