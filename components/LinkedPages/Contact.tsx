@@ -51,7 +51,7 @@ export default function ContactPage(){
     return (
       <main className="full-width">
         <section className="breakout h-[400px] flex items-center mb-10">
-          <h1 className="text-8xl font-semibold">Looking for me?</h1>
+          <h1 className="text-8xl font-bold">Looking for me?</h1>
         </section>
         <section className="flex flex-col justify-center items-center gap-5 min-h-[500px] py-20">
           <h1 className="text-center text-sky-700">Let's Connect.</h1>
