@@ -8,7 +8,7 @@ export const LandingSection = () => (
     transition={{ duration: 0.5 }}
     className="h-[600px] flex flex-col justify-center w-full gap-2 bg-zephImage bg-no-repeat bg-cover md:bg-center duration-300 ease-in-out"
   >
-    <div className="flex gap-2">
+    <div className="flex flex-col sm:flex-row gap-2">
       <motion.h4
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -30,14 +30,13 @@ export const LandingSection = () => (
       transition={{ duration: 0.5, delay: 1.5 }}
     >
       <h1 className="font-extrabold mb-5">
-        A{" "}
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 2.25 }}
           className="text-sky-500"
         >
-          Web Developer
+          Web&nbsp;Developer
         </motion.span>{" "}
         based in the Philippines.
       </h1>
