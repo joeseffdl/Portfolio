@@ -2,11 +2,40 @@
 
 import { NavigationList } from "@/constants";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
+type WindowDimentions = {
+  width: number | undefined
+  height: number | undefined
+}
 
 export const NavigationComponent = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
+    width: undefined,
+    height: undefined,
+  })
+  
+  useEffect(() => {
+    function handleResize(): void {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return (): void => window.removeEventListener("resize", handleResize)
+  }, []) 
+  
+  useEffect(() => {
+    if (windowDimensions.width && windowDimensions.width > 768) {
+      setIsMenuOpen(false)
+    }
+  }, [windowDimensions])
 
   return (
     <nav className="breakout relative flex items-center justify-between h-24">
