@@ -8,7 +8,7 @@ export const AboutPage = () => (
         <h1 className="text-4xl font-bold mb-4">
           👋 Hi, I'm <span className="text-sky-400">Zeph</span>!
         </h1>
-        <p className="text-lg px-5">
+        <p className="text-lg sm:px-5 duration-150">
           Welcome to my world of 🎸 <span className="text-sky-400">Music</span>{" "}
           and 🕸️ <span className="text-sky-400">Web development</span>. Let's
           create something amazing together! 🚀

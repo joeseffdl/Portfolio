@@ -49,47 +49,47 @@ export default function ContactPage(){
     }
 
     return (
-        <main className="full-width">
-            <section className="breakout h-[400px] flex items-center mb-10">
-                <h1 className="text-8xl font-semibold">Looking for me?</h1>
-            </section>
-            <section className="flex flex-col gap-5 min-h-[500px] py-20 lg:px-32">
-                <h1 className="text-center text-sky-700">Let's Connect.</h1>
-                <form
-                    onSubmit={handleFormSubmit}
-                    className="flex flex-col  px-20"
-                >
-                    <input
-                        className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
-                        type="text"
-                        placeholder="Name"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                    />
-                    <input
-                        className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
-                        type="email"
-                        placeholder="Email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                    <textarea
-                        cols={30}
-                        rows={10}
-                        className="h-20 flex items-center w-full border-b-2 focus:pl-2 pt-2 outline-sky-500"
-                        placeholder="Message"
-                        onChange={(e) => setMessage(e.target.value)}
-                        value={message}
-                    />
-                    <input type="hidden" name="_gotcha" className="!hidden"></input>
-                    <button
-                        className="place-self-end mt-2 py-2 px-5  bg-sky-700 hover:bg-sky-700/90 text-white font-medium"
-                        type="submit"
-                    >
-                        Send
-                    </button>
-                </form>
-            </section>
-        </main>
+      <main className="full-width">
+        <section className="breakout h-[400px] flex items-center mb-10">
+          <h1 className="text-8xl font-semibold">Looking for me?</h1>
+        </section>
+        <section className="flex flex-col justify-center items-center gap-5 min-h-[500px] py-20">
+          <h1 className="text-center text-sky-700">Let's Connect.</h1>
+          <form
+            onSubmit={handleFormSubmit}
+            className="flex flex-col w-full px-2 items-center justify-center max-w-[550px]"
+          >
+            <input
+              className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
+              type="text"
+              placeholder="Name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+            <input
+              className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            <textarea
+              cols={30}
+              rows={10}
+              className="h-20 flex items-center w-full border-b-2 focus:pl-2 pt-2 outline-sky-500"
+              placeholder="Message"
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+            />
+            <input type="hidden" name="_gotcha" className="!hidden"></input>
+            <button
+              className="place-self-end mt-2 py-2 px-5  bg-sky-700 hover:bg-sky-700/90 text-white font-medium"
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
+        </section>
+      </main>
     )
 }
