@@ -1,4 +1,5 @@
 import { WebProjectsList } from "@/constants";
+import Link from "next/link";
 
 export const ProjectsSection = () => {
   return (
@@ -9,7 +10,7 @@ export const ProjectsSection = () => {
       <div className="grid sm:grid-cols-2 gap-10">
         {WebProjectsList.map((project) => (
           <div key={project.name} className="flex flex-col gap-5">
-            <a
+            <Link
               href={project.path}
               target="_blank"
               className="relative overflow-clip flex flex-col items-center justify-center border w-full h-[400px] rounded-md shadow-xl hover:-translate-y-1 duration-150 ease-in-out"
@@ -29,7 +30,7 @@ export const ProjectsSection = () => {
                   </label>
                 ))}
               </div>
-            </a>
+            </Link>
 
             <div>
               <h5 className="text-sky-700">{project.name}</h5>

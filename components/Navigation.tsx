@@ -1,14 +1,14 @@
 "use client";
 
 import { NavigationList } from "@/constants";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 type WindowDimentions = {
-  width: number | undefined
-  height: number | undefined
-}
+  width: number | undefined;
+  height: number | undefined;
+};
 
 export const NavigationComponent = () => {
   const pathname = usePathname();
@@ -17,31 +17,31 @@ export const NavigationComponent = () => {
   const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
     width: undefined,
     height: undefined,
-  })
-  
+  });
+
   useEffect(() => {
     function handleResize(): void {
       setWindowDimensions({
         width: window.innerWidth,
         height: window.innerHeight,
-      })
+      });
     }
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return (): void => window.removeEventListener("resize", handleResize)
-  }, []) 
-  
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return (): void => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     if (windowDimensions.width && windowDimensions.width > 768) {
-      setIsMenuOpen(false)
+      setIsMenuOpen(false);
     }
-  }, [windowDimensions])
+  }, [windowDimensions]);
 
   return (
     <nav className="breakout relative flex items-center justify-between h-24">
-      <a href="/" className="font-bold text-2xl text-sky-700">
+      <Link href="/" className="font-bold text-2xl text-sky-700">
         Joseph De Leon
-      </a>
+      </Link>
       <div className="md:hidden flex items-center justify-center h-full">
         <button
           type="button"
@@ -80,7 +80,7 @@ export const NavigationComponent = () => {
       >
         {NavigationList.map((list) => (
           <li key={list.name} className="relative w-fit">
-            <a
+            <Link
               href={list.path}
               className={`
               ${
@@ -91,17 +91,17 @@ export const NavigationComponent = () => {
                     ? "text-sky-700 text-6xl after:absolute after:translate-y-16 after:left-0 after:bg-sky-700 after:w-full after:h-0.5 font-semibold"
                     : "text-gray-700 text-6xl after:absolute after:translate-y-16 after:left-0 after:bg-sky-700 after:w-0 after:hover:w-full after:h-0.5 after:duration-150 after:rounded-full after:transition-all after:ease-in-out hover:text-sky-700 font-semibold"
                   : (list.name.toLowerCase() === "projects" &&
-                      pathname.slice(1) === "") ||
-                    list.name.toLowerCase() === pathname.slice(1)
-                  ? "text-sky-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-full after:h-0.5 font-semibold"
-                  : "text-gray-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-0 after:hover:w-full after:h-0.5 after:duration-150 after:rounded-full after:transition-all after:ease-in-out hover:text-sky-700 font-semibold"
+                        pathname.slice(1) === "") ||
+                      list.name.toLowerCase() === pathname.slice(1)
+                    ? "text-sky-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-full after:h-0.5 font-semibold"
+                    : "text-gray-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-0 after:hover:w-full after:h-0.5 after:duration-150 after:rounded-full after:transition-all after:ease-in-out hover:text-sky-700 font-semibold"
               }`}
             >
               {list.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
     </nav>
-  )
+  );
 };
