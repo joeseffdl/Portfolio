@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 export const LandingSection = () => (
   <motion.main
     initial={{ opacity: 0, x: 200 }}
@@ -50,4 +50,4 @@ export const LandingSection = () => (
       </motion.p>
     </motion.div>
   </motion.main>
-)
+);

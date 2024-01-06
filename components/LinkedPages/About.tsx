@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const AboutPage = () => (
   <main className="full-width">
     <section className="breakout h-[400px] flex items-center">
@@ -29,12 +31,12 @@ export const AboutPage = () => (
         <br />
         <br />I find joy in exploring diverse musical genres such as rock,
         blues, and jazz. I also play in a band called{" "}
-        <a
+        <Link
           href="https://www.facebook.com/stardustandmelodies"
           className="text-sky-700 underline"
         >
           Stardust and Melodies
-        </a>{" "}
+        </Link>{" "}
         <br />
         <br />
         Currently, I am actively seeking opportunities as a{" "}
