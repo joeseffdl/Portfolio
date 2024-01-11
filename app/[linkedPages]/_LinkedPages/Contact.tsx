@@ -3,23 +3,34 @@
 import { useState } from "react";
 
 export default function ContactPage() {
-  let [name, setName] = useState("");
-  let [email, setEmail] = useState("");
-  let [message, setMessage] = useState("");
+  let [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const { name, value } = e.target
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!name || !email || !message) {
-      // Handle empty fields if needed
+    if (form.name === "" || form.email === "" || form.message === "") {
+      alert("Please fill out all fields.");
       return;
     }
 
     const data = {
-      name,
-      email,
-      message,
-    };
+      name: form.name,
+      email: form.email,
+      message: form.message,
+    }
 
     try {
       const response = await fetch(
@@ -43,9 +54,11 @@ export default function ContactPage() {
       alert("An unexpected error occurred. Please try again later.");
     }
 
-    setName("");
-    setEmail("");
-    setMessage("");
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
   }
 
   return (
@@ -63,23 +76,26 @@ export default function ContactPage() {
             className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
             type="text"
             placeholder="Name"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            onChange={handleChange}
+            name="name"
+            value={form.name}
           />
           <input
             className="h-20 flex items-center w-full border-b-2 focus:pl-2 outline-sky-500"
             type="email"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
+            onChange={handleChange}
+            name="email"
+            value={form.email}
           />
           <textarea
             cols={30}
             rows={10}
             className="h-20 flex items-center w-full border-b-2 focus:pl-2 pt-2 outline-sky-500"
             placeholder="Message"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
+            onChange={handleChange}
+            name="message"
+            value={form.message}
           />
           <input type="hidden" name="_gotcha" className="!hidden"></input>
           <button

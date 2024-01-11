@@ -1,13 +1,22 @@
-import { AboutPage, ContactPage } from "@/components/LinkedPages";
+import { AboutPage, ContactPage } from "./_LinkedPages";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-type LinkedPages = "about" | "projects" | "contact";
+export const generateMetadata = ({ params }: LinkedPages): Metadata => {
+  return {
+    title: `${params.linkedPages}`,
+  };
+}
+
+type LinkedPages = {
+  params: {
+    linkedPages: "about" | "contact";
+  }
+}
 
 export default function LinkedPages({
   params: { linkedPages },
-}: {
-  params: { linkedPages: LinkedPages };
-}) {
+}: LinkedPages) {
   return linkedPages === "about" ? (
     <AboutPage />
   ) : linkedPages === "contact" ? (

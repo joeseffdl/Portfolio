@@ -45,7 +45,7 @@ export const NavigationComponent = () => {
       <div className="md:hidden flex items-center justify-center h-full">
         <button
           type="button"
-          className="group relative flex  justify-center items-center w-8 h-8 cursor-pointer "
+          className="group relative flex justify-center items-center w-8 h-8 cursor-pointer "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span

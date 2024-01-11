@@ -18,7 +18,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Joseph De Leon | Web Developer",
+  title: {
+    default: "Joseph De Leon | Web Developer",
+    template: "%s | Joseph De Leon",
+  },
   description: "Web developer based in the Philippines.",
 };
 
