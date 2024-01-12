@@ -1,8 +1,8 @@
-import { SocialsList } from "@/constants";
-import Link from "next/link";
+import { SocialsList } from "@/utils/constants"
+import Link from "next/link"
 
 export const FooterComponent = () => {
-  const getYear = new Date().getFullYear();
+  const getYear = new Date().getFullYear()
 
   return (
     <footer className="full-width border-t-2 h-60">
@@ -52,5 +52,5 @@ export const FooterComponent = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

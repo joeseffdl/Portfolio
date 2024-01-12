@@ -1,5 +1,5 @@
-import { WebProjectsList } from "@/constants";
-import Link from "next/link";
+import { WebProjectsList } from "@/utils/constants"
+import Link from "next/link"
 
 export const ProjectsSection = () => {
   return (
@@ -40,5 +40,5 @@ export const ProjectsSection = () => {
         ))}
       </div>
     </main>
-  );
-};
+  )
+}
