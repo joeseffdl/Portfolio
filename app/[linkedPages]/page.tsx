@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const generateMetadata = ({ params }: LinkedPages): Metadata => {
   return {
-    title: `${params.linkedPages}`,
+    title: `${params.linkedPages[0]}`.toUpperCase() + params.linkedPages.slice(1),
   };
 }
 
