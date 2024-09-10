@@ -7,82 +7,88 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export const NavigationComponent = () => {
+  const PLACEHOLDER = "zeph."
+  const BREAKPOINT = 768
+
   const pathname = usePathname()
   const windowDimensions = useWindowDimensions()
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-
   useEffect(() => {
-    if (windowDimensions.width && windowDimensions.width > 768) {
+    if (windowDimensions.width && windowDimensions.width > BREAKPOINT) {
       setIsMenuOpen(false)
     }
   }, [windowDimensions])
 
   return (
-    <nav className="breakout relative flex items-center justify-between h-24">
-      <Link href="/" className="font-bold text-2xl text-sky-700">
-        Joseph De Leon
+    <nav className="breakout flex items-center justify-between h-20">
+      <Link href="/" className="font-semibold text-3xl text-sky-900 z-10">
+        {PLACEHOLDER}
       </Link>
-      <div className="md:hidden flex items-center justify-center h-full">
+      <>
+        {/**
+         * Navigation Menu
+         * */}
         <button
           type="button"
-          className="group relative flex justify-center items-center w-8 h-8 cursor-pointer "
+          className="md:hidden transition-all duration-500 ease-linear overflow-hidden group relative grid place-items-center size-6 z-10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span
-            className={`absolute w-5 h-0.5 rounded-full bg-black transition-all transform group-hover:bg-sky-700  ${
-              isMenuOpen
-                ? "-rotate-45 translate-y-0"
-                : "group-hover:-translate-y-[7px] -translate-y-1.5"
+            className={`-translate-x-8 top-1 group-hover:-translate-x-0 absolute bg-black w-full h-[3px] after:absolute after:inset-0 after:w-full after:h-[3px] after:bg-black after:translate-x-8 transform duration-500 ${
+              isMenuOpen ? "top-auto -rotate-45 !-translate-x-0" : ""
             }`}
           />
           <span
-            className={`w-5 h-0.5 rounded-full bg-black transition-all group-hover:bg-sky-700 ${
-              isMenuOpen
-                ? "translate-x-6 bg-transparent group-hover:bg-transparent"
-                : "translate-x-0"
+            className={`-translate-x-8 group-hover:-translate-x-0 absolute bg-black w-full h-[3px] after:absolute after:inset-0 after:w-full after:h-[3px] after:bg-black after:translate-x-8 transform duration-500 ${
+              isMenuOpen ? "!translate-x-8" : "delay-[50ms]"
             }`}
           />
           <span
-            className={`absolute w-5 h-0.5 rounded-full bg-black transition-all transform group-hover:bg-sky-700  ${
-              isMenuOpen
-                ? "rotate-45 translate-y-0"
-                : "group-hover:translate-y-[7px] translate-y-1.5"
+            className={`-translate-x-8 bottom-1 group-hover:-translate-x-0 absolute bg-black w-full h-[3px] after:absolute after:inset-0 after:w-full after:h-[3px] after:bg-black after:translate-x-8 transform duration-500 ${
+              isMenuOpen ? "bottom-auto rotate-45 !-translate-x-0" : "delay-100"
             }`}
           />
         </button>
-      </div>
-      <ul
-        className={`md:flex gap-10 ${
-          isMenuOpen
-            ? "absolute flex flex-col justify-center top-24 p-5 w-screen h-[400px] bg-white border-y-4 border-sky-700 -left-4"
-            : "hidden"
-        }`}
-      >
-        {NavigationList.map((list) => (
-          <li key={list.name} className="relative w-fit">
-            <Link
-              href={list.path}
-              className={`
-              ${
-                isMenuOpen
-                  ? (list.name.toLowerCase() === "projects" &&
-                      pathname.slice(1) === "") ||
-                    list.name.toLowerCase() === pathname.slice(1)
-                    ? "text-sky-700 text-6xl after:absolute after:translate-y-16 after:left-0 after:bg-sky-700 after:w-full after:h-0.5 font-semibold"
-                    : "text-gray-700 text-6xl after:absolute after:translate-y-16 after:left-0 after:bg-sky-700 after:w-0 after:hover:w-full after:h-0.5 after:duration-150 after:rounded-full after:transition-all after:ease-in-out hover:text-sky-700 font-semibold"
-                  : (list.name.toLowerCase() === "projects" &&
-                      pathname.slice(1) === "") ||
-                    list.name.toLowerCase() === pathname.slice(1)
-                  ? "text-sky-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-full after:h-0.5 font-semibold"
-                  : "text-gray-700 after:absolute after:translate-y-5 after:left-0 after:bg-sky-700 after:w-0 after:hover:w-full after:h-0.5 after:duration-150 after:rounded-full after:transition-all after:ease-in-out hover:text-sky-700 font-semibold"
-              }`}
-            >
-              {list.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        {/**
+         * Navigation Card
+         * */}
+        <section
+          className={`md:h-[inherit] md:grid-rows-[1fr] md:max-w-[1200px] md:inset-auto absolute top-0 left-0 h-dvh w-full grid transform duration-500 ease-linear ${
+            isMenuOpen ? "bg-black grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="bg-white rounded-b-3xl md:rounded-none md:size-full w-full h-4/5 overflow-hidden px-4">
+            <ul className="md:mt-0 md:flex-row md:gap-5 md:px-4 md:h-full md:items-center md:justify-end mt-28 flex flex-col gap-2">
+              {NavigationList.map((list, index) => (
+                <li
+                  key={list.name}
+                  className={`md:!opacity-100 md:!translate-x-0  md:text-3xl text-5xl font-semibold ${
+                    isMenuOpen
+                      ? "animate-open-slide-right"
+                      : "animate-close-slide-left"
+                  }`}
+                  style={{
+                    animationDelay: `${
+                      isMenuOpen
+                        ? 50 * index
+                        : 50 * (NavigationList.length - 1 - index)
+                    }ms`,
+                  }}
+                >
+                  <Link
+                    className="hover:opacity-60 transition-opacity"
+                    href={list.path}
+                  >
+                    {list.name.toLowerCase()}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </>
     </nav>
   )
 }

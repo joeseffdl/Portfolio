@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { NavigationComponent, FooterComponent } from "@/components";
 
-const montserrat = Montserrat({
+const fontFamily = Roboto({
   subsets: ["latin"],
   display: "swap",
   fallback: [
@@ -15,7 +15,8 @@ const montserrat = Montserrat({
     "Segoe UI Symbol",
     "Noto Color Emoji",
   ],
-});
+  weight: ["100", "300", "400", "500", "700", "900"],
+})
 
 export const metadata: Metadata = {
   title: {
@@ -32,11 +33,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} content-grid`}>
+      <body className={`${fontFamily.className} content-grid relative`}>
         <NavigationComponent />
         {children}
         <FooterComponent />
       </body>
     </html>
-  );
+  )
 }

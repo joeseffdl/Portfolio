@@ -27,13 +27,6 @@ export const WebProjectsList = [
     categories: [{ name: "Academic", color: "bg-blue-500" }],
   },
   {
-    name: "Biyahe ni Zeph",
-    path: "https://biyahe-ni-zeph.vercel.app",
-    description: "Personal blog - Cycling Journey",
-    image: "/personal_blog.png",
-    categories: [{ name: "Personal", color: "bg-amber-500" }],
-  },
-  {
     name: "May F2F Ba?!?",
     path: "https://may-f2f-ba.vercel.app/",
     description: "Simple Calendar Web Application for determining class format",
