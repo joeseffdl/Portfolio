@@ -22,7 +22,7 @@ export const NavigationComponent = () => {
   }, [windowDimensions])
 
   return (
-    <nav className="breakout flex items-center justify-between h-20">
+    <nav className="breakout flex items-center justify-between h-20 z-50">
       <Link href="/" className="font-semibold text-3xl text-sky-900 z-10">
         {PLACEHOLDER}
       </Link>
