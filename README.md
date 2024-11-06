@@ -20,4 +20,4 @@ The minimalist design serves as a foundation for clarity and focus, allowing con
 By harmonizing simplicity with dynamic elements, the design not only offers a visually appealing experience but also ensures efficient navigation and interaction. This balance of minimalism with innovative scroll-based features and animations creates a polished, professional presentation that highlights both creativity and technical skill.
 
 ## Stay Connected! 📬
-You can reach me through [LinkedIn](https://www.linkedin.com/in/joeseffdl/ "@joeseffdl") or you can send me an email [📧](mailto:joeseffdl@gmail.com "Click to send an email to Joseph")
+You can reach me through [LinkedIn](https://www.linkedin.com/in/joeseffdl/ "@joeseffdl") or you can send me an email by click the icon next to this text [📧](mailto:joeseffdl@gmail.com "Click to send an email to Joseph")

@@ -9,8 +9,7 @@ export default function ProjectPage() {
           <section className="breakout w-full">
             <h2 className="text-4xl">Project Details Section</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              doloremque officia impedit laborum. Quae, incidunt.
+             This is a placeholder text for the project's detail section. This section provides information that serves as an overview on what the project is all about.
             </p>
           </section>
         </>
