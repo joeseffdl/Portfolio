@@ -13,7 +13,7 @@ export const AboutPage = () => (
         <p className="text-lg sm:px-5 duration-150">
           Welcome to my world of 🎸 <span className="text-sky-400">Music</span>,
           🚲 <span className="text-sky-400">Cycling</span>, and 🕸️{" "}
-          <span className="text-sky-400">Web development</span>. Let's create
+          <span className="text-sky-400">Web development</span>. Let&apos;s create
           something amazing together! 🚀
         </p>
       </div>
@@ -54,7 +54,7 @@ export const AboutPage = () => (
         in computer engineering and a commitment to staying updated with the
         latest technologies, I specialize in creating robust and user-friendly
         web applications. My skills range from front-end technologies like React
-        and Next.js to back-end technologies like Node.js and MongoDB. Let's
+        and Next.js to back-end technologies like Node.js and MongoDB. Let&apos;s
         build innovative and impactful solutions together!
       </p>
     </section>
@@ -62,7 +62,7 @@ export const AboutPage = () => (
     <section className="flex flex-col gap-5 min-h-[300px] py-20 lg:px-32">
       <h1 className="text-center">Musician</h1>
       <p className="text-lg font-medium">
-        🎸 Music is not just a hobby; it's a way of life for me. As an avid{" "}
+        🎸 Music is not just a hobby; it&apos;s a way of life for me. As an avid{" "}
         <span className="text-sky-700">Musician</span>, I delve into diverse
         genres such as rock, blues, and jazz. Whether solo or with my band,{" "}
         <Link

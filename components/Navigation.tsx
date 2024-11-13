@@ -3,14 +3,12 @@
 import { NavigationList } from "@/utils/constants"
 import { useWindowDimensions } from "@/utils/functions/"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export const NavigationComponent = () => {
   const PLACEHOLDER = "zeph."
   const BREAKPOINT = 768
 
-  const pathname = usePathname()
   const windowDimensions = useWindowDimensions()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)

@@ -21,7 +21,7 @@ export const ProjectsSection = () => {
                 alt={`${project.name} website image`}
               />
               <div className="absolute bottom-0 left-0 w-full flex justify-end mt-3 bg-slate-700 bg-opacity-75">
-                {project.categories.map((category, index) => (
+                {project.categories.map((category) => (
                   <label
                     key={category.name}
                     className={`mx-2 p-2 text-xs font-medium text-white`}

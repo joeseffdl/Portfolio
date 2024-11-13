@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function ContactPage() {
-  let [form, setForm] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
@@ -67,7 +67,7 @@ export default function ContactPage() {
         <h1 className="text-8xl font-bold">Looking for me?</h1>
       </section>
       <section className="flex flex-col justify-center items-center gap-5 min-h-[500px] py-20">
-        <h1 className="text-center text-sky-700">Let's Connect.</h1>
+        <h1 className="text-center text-sky-700">Let&apos;s Connect.</h1>
         <form
           onSubmit={handleFormSubmit}
           className="flex flex-col w-full px-2 items-center justify-center max-w-[550px]"

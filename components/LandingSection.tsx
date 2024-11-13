@@ -21,7 +21,7 @@ export const LandingSection = () => (
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.75, delay: 0.75 }}
       >
-        I'm Joseph De Leon
+        I&apos;m Joseph De Leon
       </motion.h4>
     </div>
     <motion.div
